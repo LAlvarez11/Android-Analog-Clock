@@ -11,6 +11,11 @@ import android.view.View;
 public class ClockView extends View {
 
     private Context context;
+    private int h;
+    private int w;
+    private final float HEIGHT = 340f;
+    private final float WIDTH = 200f;
+    private final float ASPECTRATIO = WIDTH / HEIGHT;
 
     public ClockView(Context context) {
         super(context);
@@ -39,6 +44,33 @@ public class ClockView extends View {
 
     private void init(Context context){
         this.context = context;
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+
+        this.w = w;
+        this.h = h;
+        super.onSizeChanged(w, h, oldw, oldh);
+
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+
+        int calc_width = (int)(heightSize * ASPECTRATIO);
+        int calc_height = (int)(widthSize / ASPECTRATIO);
+
+        if(calc_height > widthSize){
+            setMeasuredDimension(calc_width, heightSize);
+        }
+        else{
+            setMeasuredDimension(widthSize, calc_height);
+        }
     }
 
 
