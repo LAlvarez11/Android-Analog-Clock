@@ -16,6 +16,10 @@ public class ClockView extends View {
     private final float HEIGHT = 340f;
     private final float WIDTH = 200f;
     private final float ASPECTRATIO = WIDTH / HEIGHT;
+    private final float radius = 200;
+
+
+
 
     public ClockView(Context context) {
         super(context);
