@@ -6,11 +6,4 @@
     android:layout_height="match_parent"
     tools:context="com.alvarez.luis.lalvarezlab5.MainActivity">
 
-    <view
-        class="com.alvarez.luis.lalvarezlab5.ClockView"
-        id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="101dp" />
 </android.support.constraint.ConstraintLayout>
