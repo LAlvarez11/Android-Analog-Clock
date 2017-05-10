@@ -14,8 +14,6 @@ import android.view.View;
 
 public class ClockView extends View {
 
-}
-
     private Context context;
     private int h;
     private int w;
@@ -100,46 +98,13 @@ public class ClockView extends View {
         path.lineTo(160, 30);
         path.lineTo(40, 30);
         path.lineTo(30, 40);
+
         float h2 =  h / HEIGHT;
         float w2 = w / WIDTH;
+
         canvas.scale(w2, h2);
-
-
-        //1st position
-        if(this.setSegment[0] == 1) {
-            canvas.drawPath(path, p);
-        }
-        else{
-            canvas.drawPath(path, p2);
-        }
-        canvas.save();
-
-
-
-        //2nd position
-        canvas.rotate(90, 30, 40);
-        if(this.setSegment[1] == 1) {
-            canvas.drawPath(path, p);
-        }
-        else{
-            canvas.drawPath(path, p2);
-        }
         canvas.restore();
         canvas.save();
-
-
-        //3rd position
-        canvas.rotate(-90, 170, 40);
-        if(this.setSegment[2] == 1) {
-            canvas.drawPath(path, p);
-        }
-        else{
-            canvas.drawPath(path, p2);
-        }
-        canvas.translate(0, 140);
-        canvas.restore();
-        canvas.save();
-
-
 
     }
+}
