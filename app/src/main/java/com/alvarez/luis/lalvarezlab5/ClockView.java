@@ -20,7 +20,15 @@ public class ClockView extends View {
     private final float HEIGHT = 340f;
     private final float WIDTH = 200f;
     private final float ASPECTRATIO = WIDTH / HEIGHT;
+<<<<<<< HEAD
     private Path path;
+=======
+    private final float radius = 200;
+    private Path path;
+
+
+
+>>>>>>> origin/master
 
     public ClockView(Context context) {
         super(context);
@@ -49,6 +57,32 @@ public class ClockView extends View {
 
     private void init(Context context){
         this.context = context;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas){
+
+        canvas.drawRGB(0,0,0);
+
+        int red = Color.rgb(255,0,0);
+        int dullred = Color.rgb(77, 0, 0);
+        Paint p = new Paint();
+        Paint p2 = new Paint();
+        p.setColor(red);
+        p2.setColor(dullred);
+        p.setStyle(Paint.Style.FILL);
+        p2.setStyle(Paint.Style.FILL);
+        path = new Path();
+        path.moveTo(30, 40);
+        path.lineTo(40, 50);
+        path.lineTo(160, 50);
+        path.lineTo(170, 40);
+        path.lineTo(160, 30);
+        path.lineTo(40, 30);
+        path.lineTo(30, 40);
+        float h2 =  h / HEIGHT;
+        float w2 = w / WIDTH;
+
     }
 
     @Override
