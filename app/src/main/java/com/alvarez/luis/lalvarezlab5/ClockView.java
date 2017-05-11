@@ -1,6 +1,10 @@
 package com.alvarez.luis.lalvarezlab5;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -17,6 +21,7 @@ public class ClockView extends View {
     private final float WIDTH = 200f;
     private final float ASPECTRATIO = WIDTH / HEIGHT;
     private final float radius = 200;
+    private Path path;
 
 
 
@@ -48,6 +53,32 @@ public class ClockView extends View {
 
     private void init(Context context){
         this.context = context;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas){
+
+
+        int red = Color.rgb(255,0,0);
+        int dullred = Color.rgb(77, 0, 0);
+        Paint p = new Paint();
+        Paint p2 = new Paint();
+        p.setColor(red);
+        p2.setColor(dullred);
+        p.setStyle(Paint.Style.FILL);
+        p2.setStyle(Paint.Style.FILL);
+        path = new Path();
+        path.moveTo(30, 40);
+        path.lineTo(40, 50);
+        path.lineTo(160, 50);
+        path.lineTo(170, 40);
+        path.lineTo(160, 30);
+        path.lineTo(40, 30);
+        path.lineTo(30, 40);
+        float h2 =  h / HEIGHT;
+        float w2 = w / WIDTH;
+        canvas.scale(w2, h2);
+        canvas.drawPath(path, p);
     }
 
     @Override
