@@ -22,6 +22,13 @@ public class ClockView extends View {
     private final float ASPECTRATIO = WIDTH / HEIGHT;
     private final float radius = 200;
     private Path path;
+    private float hourHandLength;
+    private float minuteHandLength;
+    private float secondHandLength;
+    private float hourTailLength;
+    private float minuteTailLength;
+    private float secondTailLength;
+
 
 
 
@@ -110,5 +117,5 @@ public class ClockView extends View {
     }
 
 
-   
+
 }
