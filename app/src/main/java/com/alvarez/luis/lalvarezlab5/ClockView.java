@@ -58,6 +58,7 @@ public class ClockView extends View {
     @Override
     protected void onDraw(Canvas canvas){
 
+        canvas.drawRGB(0,0,0);
 
         int red = Color.rgb(255,0,0);
         int dullred = Color.rgb(77, 0, 0);
@@ -77,8 +78,7 @@ public class ClockView extends View {
         path.lineTo(30, 40);
         float h2 =  h / HEIGHT;
         float w2 = w / WIDTH;
-        canvas.scale(w2, h2);
-        canvas.drawPath(path, p);
+
     }
 
     @Override
